@@ -2,28 +2,16 @@ version: "3.4"
 
 services:
   datamanagement:
-    image: ${DOCKER_REGISTRY-}datamanagement
-    build:
-      context: .
-      dockerfile: DataManagement/Dockerfile
+    image: docker.io/predictionbotservice/data-management-service:latest
 
   modeltrainer:
-    image: ${DOCKER_REGISTRY-}modeltrainer
-    build:
-      context: .
-      dockerfile: ModelTrainer/Dockerfile
+    image: docker.io/predictionbotservice/model-trainer-service:latest
 
   predictionservice:
-    image: ${DOCKER_REGISTRY-}predictionservice
-    build:
-      context: .
-      dockerfile: PredictionService/Dockerfile
+    image: docker.io/predictionbotservice/prediction-service:latest
 
   operationservice:
-    image: ${DOCKER_REGISTRY-}operationservice
-    build:
-      context: .
-      dockerfile: OperationService/Dockerfile
+    image: docker.io/predictionbotservice/operation-service:latest
 
   database:
     image: mariadb
